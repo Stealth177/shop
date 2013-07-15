@@ -1,24 +1,96 @@
 !!!
 %html
   %head
-    %title Online Store
-    = stylesheet_link_tag    "application", :media => "all"
+    %title Компьютерный магазин
+    = stylesheet_link_tag    "application", :media => "all" 
     = javascript_include_tag "application"
-    = csrf_meta_tags 
+    = csrf_meta_tags
   %body
-    #banner
-      = image_tag("logo.png")
-      = (@page_title || "Pragmatic Book shelf")
-    #columns
-      #side
-        %ul
-          %li
-            %a{:href => "http://www..../contact"} Contact
-          %li
-            %a{:href => "http://www..../contact"} Contact
-          %li
-            %a{:href => "http://www..../contact"} Contact
-          %li
-            %a{:href => "http://www..../contact"} Contact
-      #main
-        = yield
+    %table{:align => "center", :border => "0", :cellpadding => "0", :cellspacing => "0", :width => "920"}
+      %tr
+        %td{:height => "25"}  
+      %tr
+        %td.header{:height => "77"}
+          %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+            %tr
+              %td{:align => "left", :width => "28%"}
+                %img{:alt => "", :border => "0", :height => "77", :src => "/assets/logo.jpg", :width => "262"}/
+              %td{:align => "right", :width => "72%"}
+                %a{:href => "#"}> Вход
+                \  
+                %a{:href => "#"}> Регистрация
+
+      %tr
+        %td.menu{:height => "38"}
+          .menuLs
+            %ul
+              %li
+                %a{:href => "#"} Главная
+              %li
+                %a{:href => "#"} Каталог
+              %li
+                %a{:href => "#"} О компании
+              %li
+                %a{:href => "#"} Прайс-лист
+              %li
+                %a{:href => "#"} Контакты
+              %li
+                %a{:href => "#"} Новости
+              %li
+                %a{:href => "#"} Обзоры
+
+      %tr
+        %td{:height => "20"}  
+      %tr
+        %td
+          %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "920"}
+            %tr{:align => "left", :valign => "top"}
+              %td{:height => "479", :width => "192"}
+                %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "192"}
+                  %tr
+                    %td.topMenu.LeftMenuHeader{:height => "38"} Категории
+                %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+                  %tr
+                    %td{:height => "216", :valign => "top"}
+                      .RightMenu
+                        %ul
+                          %li
+                            %a{:href => "#"} Системные блки
+                          %li
+                            %a{:href => "#"} Мониторы
+                          %li
+                            %a{:href => "#"} Видеокарты
+                          %li
+                            %a{:href => "#"} Процессоры
+                          %li
+                            %a{:href => "#"} Оперативная память
+                          %li
+                            %a{:href => "#"} Жесткие диски, SSD
+                          %li
+                            %a{:href => "#"} Блоки питания
+                          %li
+                            %a{:href => "#"} Корпуса
+                          %li
+                            %a{:href => "#"} Клавиатуры/мыши
+                          %li
+                            %a{:href => "#"} Аксессуары
+                          #cart
+                            =render @cart  
+                
+              %td{:width => "727"}
+                %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+                  %tr
+                    %td.topMenu.LeftMenuHeader{:height => "38"}
+                      Товары
+                      %a{:href => "#"}
+                        %img{:alt => "", :border => "0", :height => "10", :src => "/assets/spacer.gif", :width => "10"}/
+                = yield
+      %tr
+        %td{:height => "20"}  
+      %tr
+        %td{:align => "center"}
+          %a{:href => "#"}
+            %img{:alt => "", :border => "0", :height => "4", :src => "/assets/footer.gif", :width => "920"}/
+      %tr
+        %td{:align => "center", :height => "60"}
+          Shop on RoR © copyright 2013 -
