@@ -1,11 +1,15 @@
 Shop::Application.routes.draw do
   
+  mount Ckeditor::Engine => '/ckeditor'
+
   get "users/index"
 
   devise_for :users
 
   root to: 'store#index', as: 'store'
+  
   devise_for :admin_users, ActiveAdmin::Devise.config
+  
   ActiveAdmin.routes(self)
 
   resources :line_items
@@ -17,7 +21,8 @@ Shop::Application.routes.draw do
   get "store/index"
 
   resources :products
-
+  
+  mount Ckeditor::Engine => "/ckeditor"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

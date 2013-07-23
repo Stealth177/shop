@@ -4,9 +4,9 @@
   .product
     %h3= product.title
     .image
-      = image_tag(product.image_url)
+      = image_tag product.photo.url(:thumb)
     .content
-      = sanitize (product.description )
+      =raw sanitize (product.description )
       .price_line
         %span.price
           = number_to_currency(product.price) 

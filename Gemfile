@@ -25,6 +25,8 @@ gem 'activeadmin'
 gem 'therubyracer'
 gem 'cancan'
 gem 'devise'
+gem 'ckeditor'
+gem 'paperclip'
 gem 'haml-rails'
 gem 'thin'
 

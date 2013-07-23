@@ -1,18 +1,18 @@
 %p#notice= notice
 
 %p
-  %b Title:
+  %b Название:
   = @product.title
 %p
-  %b Description:
-  = @product.description
+  %b Описание:
+  =raw @product.description
 %p
-  %b Image url:
-  = @product.image_url
+  %b Фото:
+  = image_tag @product.photo.url(:thumb)
 %p
-  %b Price:
+  %b Цена:
   = @product.price
 
-= link_to 'Edit', edit_product_path(@product)
+= link_to 'Редактировать', edit_product_path(@product)
 \|
-= link_to 'Back', products_path
+= link_to 'Назад', products_path

@@ -7,16 +7,16 @@
           %li= msg
 
   .field
-    = f.label :title
+    = f.label 'Название:'
     = f.text_field :title
   .field
-    = f.label :description
-    = f.text_area :description, rows: 6
+    = f.label 'Описание:'
+    = f.cktext_area :description, :class => "someclass", :ckeditor => {:language => "ru"}
   .field
-    = f.label :image_url
-    = f.text_field :image_url
+    = f.label 'Фото:'
+    = f.file_field :photo
   .field
-    = f.label :price
+    = f.label  'Цена:'
     = f.text_field :price
   .actions
     = f.submit 'Save'
