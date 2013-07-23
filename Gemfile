@@ -20,8 +20,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', "~> 2.3.0"
+gem 'activeadmin'
 gem 'therubyracer'
+gem 'cancan'
+gem 'devise'
 gem 'haml-rails'
 gem 'thin'
 

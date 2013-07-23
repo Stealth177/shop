@@ -16,9 +16,15 @@
               %td{:align => "left", :width => "28%"}
                 %img{:alt => "", :border => "0", :height => "77", :src => "/assets/logo.jpg", :width => "262"}/
               %td{:align => "right", :width => "72%"}
-                %a{:href => "#"}> Вход
-                \  
-                %a{:href => "#"}> Регистрация
+                - if user_signed_in?
+                  
+                  %br
+                  = link_to "Выход", destroy_user_session_path, :method => :delete
+                - else
+                  %br
+                  = link_to 'Войти', new_user_session_path  
+                  %br
+                  = link_to 'Регистрация', new_user_registration_path
 
       %tr
         %td.menu{:height => "38"}
@@ -75,6 +81,7 @@
                           %li
                             %a{:href => "#"} Аксессуары
                           #cart
+                          -if @cart
                             =render @cart  
                 
               %td{:width => "727"}
@@ -93,4 +100,4 @@
             %img{:alt => "", :border => "0", :height => "4", :src => "/assets/footer.gif", :width => "920"}/
       %tr
         %td{:align => "center", :height => "60"}
-          Shop on RoR © copyright 2013 -
+          Shop on RoR © copyright 2013 
