@@ -6,7 +6,7 @@
     .image
       = image_tag product.photo.url(:thumb)
     .content
-      =raw sanitize (product.description )
+      =raw product.description
       .price_line
         %span.price
           = number_to_currency(product.price) 

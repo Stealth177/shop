@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 # encoding: utf-8
 Product.delete_all
+ProductCategory.delete_all
 Product.create(:title => 'Web Design for Developers',
   :description => 
     %{<p>
@@ -44,3 +45,8 @@ Product.create(:title => 'Rails Test Prescriptions',
       </p>},
   :image_url => '/images/rtp.jpg',
   :price => 43.75)
+  
+ProductCategory.create(:name => 'Processors')
+ProductCategory.create(:name => 'Video cards')
+ProductCategory.create(:name => 'HDD, SSD')
+ProductCategory.create(:name => 'Laptop')

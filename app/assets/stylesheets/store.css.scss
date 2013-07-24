@@ -7,13 +7,15 @@
         padding-bottom: 0,5em;
         font: 150% sans-serif;
         color: #225;
-        border-bottom: 3px dotted #77d;
+        width: 727px;
       }
       
 .product{  
-   overflow: auto;
-      border-bottom: 1px dotted #77d;
-      min-height: 100px; 
+      margin-left: 5px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      min-height: 200px; 
+      width: 710px;
 
         h3 {
           font-size: 120%;
@@ -24,49 +26,20 @@
           color: #227;
         } 
         .image {
-          width: 80 px;
-          margin-right: 25px;
+          width: 180 px;
+          margin-right: 5px;
           margin-bottom: 5px; 
           float: left;
       }
-       .content {
-         margin-left: 200px;
-       }
+        .content {
+         margin-left: 185px;
+         word-wrap:break-word;
+
+      }
   
-
       
-    }
+ }
     
     
     
-    
-.store {
-    
-  .entry {
-      overflow: auto;
-      margin-top: 1em;
-      border-bottom: 1px dotted #77d;
-      min-height: 100px;
-      img1 {
-        width: 180 px;
-        margin-right: 25px;
-        margin-bottom: 5px;
-        
-      }
-
-      p, div.price_line {
-        margin-left: 100px;
-        margin-top: 0,5em;
-        margin-bottom: 0,8em;
-        
-        form, div{
-          display: inline;
-        }
-      }
-      .price {
-        color: #44a;
-        font-weight: bold;
-        margin-right: 3em;
-    }
-  }
-}
+ 

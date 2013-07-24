@@ -1,0 +1,12 @@
+= form_for @product_categories do |f|
+  - if @product_categories.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@product.errors.count, "error")} prohibited this product from being saved:"
+      %ul
+        - @product_categories.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label 'Название категории:'
+    = f.text_field :name
+  .actions
+    = f.submit 'Сохранить'

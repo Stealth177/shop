@@ -1,20 +1,18 @@
-%h1
-  Список товаров
-  %table
-    - @products.each do |product|
-      %tr{:class => cycle('list_line_odd', 'list_line_even')}
+%h2= link_to 'Новый товар' , new_product_path 
+%table{:width => "727"}
+  - @products.each do |product|
+    %tr
+      %td{'colspan' => 3}
+        %h3= product.title
+      %tr  
         %td
-          = image_tag product.photo.url(:thumb)
-        %td.list_description
-          %dl
-            %dt= product.title
-            %dd=raw truncate(strip_tags(product.description) , |
-                length: 80)                                |
-        %td.list_actions
-          = link_to 'Просмотр', product
-          %br/
-          = link_to 'Редактирование' , edit_product_path(product)
-          %br/
-          = link_to 'Удаление', product, |
-            confirm: 'Вы уверены?',   |
-            method: :delete             |
+          .image
+            = image_tag product.photo.url(:thumb)
+        %td
+          .content
+            =raw product.description
+            = number_to_currency(product.price)
+          %br       
+            = link_to 'Просмотр', product
+            = link_to 'Редактирование' , edit_product_path(product)
+            = link_to 'Удаление', product, confirm: 'Вы уверены?', method: :delete             

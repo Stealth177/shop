@@ -16,6 +16,7 @@ Shop::Application.routes.draw do
 
 
   resources :carts
+  resources :product_categories
 
 
   get "store/index"

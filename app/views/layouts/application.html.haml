@@ -60,26 +60,10 @@
                     %td{:height => "216", :valign => "top"}
                       .RightMenu
                         %ul
-                          %li
-                            %a{:href => "#"} Системные блки
-                          %li
-                            %a{:href => "#"} Мониторы
-                          %li
-                            %a{:href => "#"} Видеокарты
-                          %li
-                            %a{:href => "#"} Процессоры
-                          %li
-                            %a{:href => "#"} Оперативная память
-                          %li
-                            %a{:href => "#"} Жесткие диски, SSD
-                          %li
-                            %a{:href => "#"} Блоки питания
-                          %li
-                            %a{:href => "#"} Корпуса
-                          %li
-                            %a{:href => "#"} Клавиатуры/мыши
-                          %li
-                            %a{:href => "#"} Аксессуары
+                          -@product_categories = ProductCategory.all
+                          - @product_categories.each do |product|
+                            %li
+                              = product.name
                           #cart
                           -if @cart
                             - hidden_div_if(@cart.line_items.empty?, id: 'cart') do
@@ -97,8 +81,7 @@
         %td{:height => "20"}  
       %tr
         %td{:align => "center"}
-          %a{:href => "#"}
-            %img{:alt => "", :border => "0", :height => "4", :src => "/assets/footer.gif", :width => "920"}/
+          %img{:alt => "", :border => "0", :height => "4", :src => "/assets/footer.gif", :width => "920"}/
       %tr
         %td{:align => "center", :height => "60"}
           Shop on RoR © copyright 2013 
