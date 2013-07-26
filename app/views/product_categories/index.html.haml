@@ -1,7 +1,8 @@
 - if notice
   %p#notice= notice
 - @product_categories.each do |product|
-  = product.name
-  = link_to 'Редактирование' , edit_product_category_path(product)
-  = link_to 'Удаление', product, confirm: 'Вы уверены?', method: :delete
+  .category
+    = product.name
+    = link_to 'Редактирование' , edit_product_category_path(product)
+    = link_to 'Удаление', product, confirm: 'Вы уверены?', method: :delete
   %br        

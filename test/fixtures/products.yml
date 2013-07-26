@@ -3,13 +3,11 @@
 one:
   title: MyString
   description: MyText
-  image_url: MyString
   price: 9.99
 
 two:
   title: MyString
   description: MyText
-  image_url: MyString
   price: 9.99
 
 ruby:
@@ -19,6 +17,5 @@ ruby:
     language out there. If you need to get working programs
     delivered fast, you hould add Ruby to your toolbox,
   price : 49.50
-  image_url: ruby.png
 1.9
 

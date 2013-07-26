@@ -61,9 +61,9 @@
                       .RightMenu
                         %ul
                           -@product_categories = ProductCategory.all
-                          - @product_categories.each do |product|
+                          -@product_categories.each do |product|
                             %li
-                              = product.name
+                              = link_to product.name, controller:"/store", action:"show_filter", id: product.id
                           #cart
                           -if @cart
                             - hidden_div_if(@cart.line_items.empty?, id: 'cart') do

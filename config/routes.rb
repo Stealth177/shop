@@ -3,10 +3,14 @@ Shop::Application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
 
   get "users/index"
-
+  
+  get "store/show_filter"
+  
+  root to: 'store#index', as: 'store'
+  
   devise_for :users
 
-  root to: 'store#index', as: 'store'
+ 
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   
