@@ -20,7 +20,14 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :production do
+  gem 'mysql2'
+  gem 'activerecord-mysql-adapter'
+end
+
 gem 'jquery-rails', "~> 2.3.0"
+gem 'russian', '~> 0.6.0'
+gem "devise-i18n"
 gem 'activeadmin'
 gem 'therubyracer'
 gem 'cancan'
@@ -28,6 +35,7 @@ gem 'devise'
 gem 'ckeditor'
 gem 'paperclip'
 gem 'haml-rails'
+gem 'kaminari'
 gem 'thin'
 
 # To use ActiveModel has_secure_password

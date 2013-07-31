@@ -206,5 +206,12 @@ ActiveAdmin.setup do |config|
   #
   # config.filters = true
 
+config.before_filter :set_admin_locale
+
+
+def set_admin_locale
+  I18n.locale = :ru
+end
+
 
 end

@@ -8,6 +8,8 @@
 # encoding: utf-8
 Product.delete_all
 ProductCategory.delete_all
+AdminUser.delete_all
+AdminUser.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password')
 Product.create(:title => 'Web Design for Developers',
   :description => 
     %{<p>

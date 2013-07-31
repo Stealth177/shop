@@ -4,4 +4,5 @@
   %tr.total_line
     %td{:colspan => "2"} Всего:
     %td.total_cell= number_to_currency(cart.total_price)
+= button_to 'Оформить заказ', new_order_path, method: :get
 = button_to 'Очистить корзину', cart, method: :delete, data: { confirm: 'Вы уверены?' }

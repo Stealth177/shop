@@ -1,12 +1,15 @@
 Shop::Application.routes.draw do
   
+  resources :orders
+
+
   mount Ckeditor::Engine => '/ckeditor'
 
   get "users/index"
   
   get "store/show_filter"
   
-  root to: 'store#index', as: 'store'
+  root to: 'store#show_filter', as: 'store'
   
   devise_for :users
 

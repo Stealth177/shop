@@ -6,7 +6,11 @@ class StoreController < ApplicationController
   
   def show_filter    
     #@products = Product.find_by_id params[:id_category]
-    @products = Product.where("id_category = ?", params[:id])
+    if params[:id]
+      @products = Product.where("id_category = ?", params[:id])
+    else 
+      @products = Product.order(:title)
+    end  
     if !@products
         redirect_to products_path, :alert => 'Product not found!.'
     end

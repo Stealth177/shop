@@ -34,6 +34,10 @@ GEM
       activesupport (= 3.2.13)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
+    activerecord-mysql-adapter (0.0.1)
+      activerecord (>= 3.2.9)
+      activesupport (>= 3.2.9)
+      mysql (>= 2.9.0)
     activeresource (3.2.13)
       activemodel (= 3.2.13)
       activesupport (= 3.2.13)
@@ -69,6 +73,7 @@ GEM
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
       warden (~> 1.2.3)
+    devise-i18n (0.8.6)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (1.4.0)
@@ -108,6 +113,8 @@ GEM
       polyamorous (~> 0.5.0)
     mime-types (1.23)
     multi_json (1.7.7)
+    mysql (2.9.1)
+    mysql2 (0.3.11)
     orm_adapter (0.4.0)
     paperclip (3.5.0)
       activemodel (>= 3.0.0)
@@ -145,6 +152,8 @@ GEM
     ref (1.0.5)
     responders (0.9.3)
       railties (~> 3.1)
+    russian (0.6.0)
+      i18n (>= 0.5.0)
     sass (3.2.9)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -180,14 +189,19 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  activerecord-mysql-adapter
   cancan
   ckeditor
   coffee-rails (~> 3.2.1)
   devise
+  devise-i18n
   haml-rails
   jquery-rails (~> 2.3.0)
+  kaminari
+  mysql2
   paperclip
   rails (= 3.2.13)
+  russian (~> 0.6.0)
   sass-rails (~> 3.2.3)
   sqlite3
   therubyracer
