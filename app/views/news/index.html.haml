@@ -1,0 +1,22 @@
+=content_for :top_name do 
+  Новости
+- if notice
+  %p#notice= notice
+  
+-if can? :create, @news
+  %h2= link_to 'Новая новость' , new_news_path   
+  
+- @news.each do |news|
+  .news_content
+    %b
+      %h1= news.title
+      %br
+    =raw news.content
+    %br
+    -if can? :update, @news
+      = link_to 'Редактирование' , edit_news_path(news)
+    -if can? :delete, @news   
+      = link_to 'Удаление', news, confirm: 'Вы уверены?', method: :delete      
+  %hr
+%br
+

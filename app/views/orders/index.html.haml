@@ -1,39 +1,39 @@
 %h1 Список заказов
-
-%table{:bgcolor => "black", :border => "0", :cellpadding => "2", :cellspacing => "1"}
-  %tr{:bgcolor => "white"}
-    
-    %th Ф.И.О.
-    %th Адрес
-    %th E-mail
-    %th Тип оплаты
-    %th{:width => "200"} Товары
-    %th
-
-  - @orders.each do |order|
+-if can? :manage, :all
+  %table{:bgcolor => "black", :border => "0", :cellpadding => "2", :cellspacing => "1"}
     %tr{:bgcolor => "white"}
-      %td= order.name
-      %td= order.address
-      %td= order.email
-      %td= order.pay_type
-      %td
-        - order.line_items.each do |item|
-          = item.product.title 
-          %br
-            %b Количество: 
-            = item.quantity 
-            %br
-            %b Цена: 
-            = number_to_currency item.total_price
-          %br
-      %td
-        = link_to 'Просмотр', order
-        = link_to 'Редактирование', edit_order_path(order)
-        = link_to 'Удаление', order, :method => :delete, :data => { :confirm => 'Вы уверены?' }
       
-
-%br
-
-= link_to 'Новый заказ', new_order_path
-%p
-  =  paginate @orders
+      %th Ф.И.О.
+      %th Адрес
+      %th E-mail
+      %th Тип оплаты
+      %th{:width => "200"} Товары
+      %th
+  
+    - @orders.each do |order|
+      %tr{:bgcolor => "white"}
+        %td= order.name
+        %td= order.address
+        %td= order.email
+        %td= order.pay_type
+        %td
+          - order.line_items.each do |item|
+            = item.product.title 
+            %br
+              %b Количество: 
+              = item.quantity 
+              %br
+              %b Цена: 
+              = number_to_currency item.total_price
+            %br
+        %td
+          = link_to 'Просмотр', order
+          = link_to 'Редактирование', edit_order_path(order)
+          = link_to 'Удаление', order, :method => :delete, :data => { :confirm => 'Вы уверены?' }
+        
+  
+  %br
+  
+  = link_to 'Новый заказ', new_order_path
+  %p
+    =  paginate @orders

@@ -35,6 +35,8 @@ gem 'devise'
 gem 'ckeditor'
 gem 'paperclip'
 gem 'haml-rails'
+gem 'gmaps4rails'
+gem 'active_link_to'
 gem 'kaminari'
 gem 'thin'
 

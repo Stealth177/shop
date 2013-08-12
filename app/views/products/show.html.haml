@@ -5,7 +5,7 @@
   .content 
     =raw @product.description 
     = number_to_currency(@product.price)
-    
-  = link_to 'Редактировать', edit_product_path(@product)
-  \|
+  -if can? :update, @product   
+    = link_to 'Редактировать', edit_product_path(@product)
+    \|
   = link_to 'Назад', products_path

@@ -14,6 +14,8 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.2.1)
+    active_link_to (1.0.1)
+      actionpack
     activeadmin (0.6.0)
       arbre (>= 1.0.1)
       bourbon (>= 1.0.0)
@@ -81,6 +83,7 @@ GEM
     fastercsv (1.5.5)
     formtastic (2.2.1)
       actionpack (>= 3.0)
+    gmaps4rails (1.5.6)
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -188,6 +191,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_link_to
   activeadmin
   activerecord-mysql-adapter
   cancan
@@ -195,6 +199,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   devise-i18n
+  gmaps4rails
   haml-rails
   jquery-rails (~> 2.3.0)
   kaminari

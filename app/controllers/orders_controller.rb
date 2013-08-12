@@ -1,4 +1,7 @@
 class OrdersController < ApplicationController
+  
+  load_and_authorize_resource
+  
   # GET /orders
   # GET /orders.json
   def index
@@ -30,6 +33,7 @@ class OrdersController < ApplicationController
       end
     
     @order = Order.new
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @order }
@@ -46,12 +50,12 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
-    
+   # @order.products_buy = 'current_cart'
     respond_to do |format|
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        format.html { redirect_to store_url, notice: 'Order was successfully created.' }
+        format.html { redirect_to news_index_url, notice: 'Order was successfully created.' }
         format.json { render json: @order, status: :created, location: @order }
       else
         @cart = current_cart

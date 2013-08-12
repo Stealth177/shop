@@ -1,6 +1,8 @@
+=content_for :top_name do 
+  Каталог
 - @products.each do |product|
   .product
-    %h3= product.title
+    %h3= link_to product.title, product
     .image
       = image_tag product.photo.url(:thumb)
     .content

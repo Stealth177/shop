@@ -1,9 +1,13 @@
-%h2= link_to 'Новый товар' , new_product_path 
+=content_for :top_name do 
+  Каталог
+-if can? :create, @product 
+  %h2= link_to 'Новый товар' , new_product_path 
+  
 %table{:width => "727"}
   - @products.each do |product|
     %tr
       %td{'colspan' => 3}
-        %h3= product.title
+        %h3= link_to product.title, product
       %tr  
         %td
           .image
@@ -12,7 +16,10 @@
           .content
             =raw product.description
             = number_to_currency(product.price)
-          %br       
+          %br
+                
             = link_to 'Просмотр', product
-            = link_to 'Редактирование' , edit_product_path(product)
-            = link_to 'Удаление', product, confirm: 'Вы уверены?', method: :delete             
+            -if can? :update, @product 
+              = link_to 'Редактирование' , edit_product_path(product)
+            -if can? :delete, @product   
+              = link_to 'Удаление', product, confirm: 'Вы уверены?', method: :delete             

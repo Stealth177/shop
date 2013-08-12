@@ -1,7 +1,12 @@
 Shop::Application.routes.draw do
-  
-  resources :orders
 
+  get "static_pages/contacts"
+
+  get "static_pages/about"
+  
+  get "static_pages/administration"
+
+  resources :orders
 
   mount Ckeditor::Engine => '/ckeditor'
 
@@ -9,28 +14,37 @@ Shop::Application.routes.draw do
   
   get "store/show_filter"
   
-  root to: 'store#show_filter', as: 'store'
+  post "store/show_filter"
+  
+  post "store/index"
+  
+      resources :news
+      
+      root to: 'news#index'
   
   devise_for :users
-
- 
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   
   ActiveAdmin.routes(self)
+  
+
 
   resources :line_items
 
-
   resources :carts
+  
   resources :product_categories
-
 
   get "store/index"
 
   resources :products
   
+  
+  
   mount Ckeditor::Engine => "/ckeditor"
+  
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

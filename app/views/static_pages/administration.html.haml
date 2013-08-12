@@ -1,0 +1,10 @@
+-if can? :manage, :all
+  .static_pages_content 
+
+    %h1= link_to 'Управление товарами', products_path
+    %br
+    %h1= link_to 'Управление заказами', orders_path
+    %br
+    %h1= link_to 'Управление категориями', product_categories_path
+    %br
+    %h1= link_to 'Управление новостями', news_index_path

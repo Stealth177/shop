@@ -1,3 +1,6 @@
+=content_for :top_name do 
+  Каталог
+    
 - if notice
   %p#notice= notice
 - @products.each do |product|
@@ -11,4 +14,5 @@
         %span.price
           = number_to_currency(product.price) 
           = button_to 'В корзину', line_items_path(product_id: product)
+          
        

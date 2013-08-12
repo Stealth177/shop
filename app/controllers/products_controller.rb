@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   
-  before_filter :authenticate_user!
-
+  #before_filter :authenticate_user!
+  load_and_authorize_resource
   
   # GET /products
   # GET /products.json
@@ -28,12 +28,13 @@ class ProductsController < ApplicationController
   # GET /products/new
   # GET /products/new.json
   def new
-    @product = Product.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @product }
-    end
+      @product = Product.new
+
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @product }
+      end  
   end
 
   # GET /products/1/edit

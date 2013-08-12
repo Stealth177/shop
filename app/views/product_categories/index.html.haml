@@ -1,8 +1,13 @@
 - if notice
   %p#notice= notice
+-if can? :create, @category 
+  .category
+    %h3= link_to 'Новая категория' , new_product_category_path 
 - @product_categories.each do |product|
   .category
     = product.name
     = link_to 'Редактирование' , edit_product_category_path(product)
     = link_to 'Удаление', product, confirm: 'Вы уверены?', method: :delete
-  %br        
+  %br 
+    
+= link_to 'Назад', static_pages_administration_path 
